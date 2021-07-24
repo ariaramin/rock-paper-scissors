@@ -6,7 +6,7 @@ from tkinter.font import Font
 
 #create tk
 master = Tk()
-master.geometry('357x255')
+master.geometry('475x310')
 master.title('Rock,Paper,Scissors')
 
 bscore = 0
@@ -54,32 +54,32 @@ def play(rps):
 
 
 # create GUI 
-font = Font(family="Verdana", size=13)
+font = Font(family="Verdana", size=15)
 
-rock_img = PhotoImage(file = r'C:/Users/PC/Desktop/python-mini-project/rock-paper-scissors/rock.png')
-paper_img = PhotoImage(file = r'C:/Users/PC/Desktop/python-mini-project/rock-paper-scissors/paper.png')
-scissors_img = PhotoImage(file = r'C:/Users/PC/Desktop/python-mini-project/rock-paper-scissors/scissors.png')
+rock_img = PhotoImage(file = r'./rock.png')
+paper_img = PhotoImage(file = r'./paper.png')
+scissors_img = PhotoImage(file = r'./scissors.png')
 
-Label(master, text = 'Bot:', font=font).grid(row = 0, column = 0, columnspan=1, sticky=E)
+Label(master, text = 'Bot:', font=font).grid(row=0, column=0, columnspan=3)
 rps_bot = StringVar()
-Label(master, textvariable=rps_bot, font=font).grid(row = 0, column = 1)
+Label(master, textvariable=rps_bot, font=font).grid(row=1, column=0, columnspan=3)
 
-Label(master, image=rock_img).grid(row=1, column=0)
-Button(master, text = 'Rock', command= lambda:play('rpsr'), width=10, bg='#FFD600', font=font).grid(row= 2, column= 0)
+Label(master, image=rock_img).grid(row=2, column=0)
+Button(master, text = 'Rock', command= lambda:play('rpsr'), width=10, bg='#FFD600', font=font).grid(row= 3, column= 0)
 
-Label(master, image=paper_img).grid(row=1, column=1)
-Button(master, text = 'Paper', command= lambda:play('rpsp'), width=10, bg='#64DD17', font=font).grid(row= 2, column= 1)
+Label(master, image=paper_img).grid(row=2, column=1)
+Button(master, text = 'Paper', command= lambda:play('rpsp'), width=10, bg='#64DD17', font=font).grid(row= 3, column= 1)
 
-Label(master, image=scissors_img).grid(row=1, column=2)
-Button(master, text = 'Scissors', command= lambda:play('rpss'), width=10, bg='#FF6D00', font=font).grid(row= 2, column= 2)
+Label(master, image=scissors_img).grid(row=2, column=2)
+Button(master, text = 'Scissors', command= lambda:play('rpss'), width=10, bg='#FF6D00', font=font).grid(row= 3, column= 2)
 
 user_score = StringVar()
 user_score.set(0)
-Label(master, textvariable=user_score, width=11 ,height=5, bg='#ff1744', font=font).grid(row = 3, column=0, columnspan=2)
+Label(master, textvariable=user_score, width=12 ,height=5, bg='#ff1744', font=font).grid(row = 4, column=0, columnspan=2)
 bot_score = StringVar()
 bot_score.set(0)
-Label(master, textvariable=bot_score, width=11 ,height=5, bg='#1e88e5', font=font).grid(row = 3, column=1, columnspan=3)
+Label(master, textvariable=bot_score, width=12 ,height=5, bg='#1e88e5', font=font).grid(row = 4, column=1, columnspan=3)
 
-Button(master, text = 'Restart', command=Restart, width=32, bg='#9E9E9E', font=font).grid(row=4, column = 0, columnspan= 3)
+Button(master, text = 'Restart', command=Restart, width=32, bg='#9E9E9E', font=font).grid(row=5, column = 0, columnspan= 3)
 
 master.mainloop()
